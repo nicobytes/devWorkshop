@@ -1,0 +1,28 @@
+<!--
+  Generated template for the RockbandPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar primary>
+    <ion-title>rockband</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="rockband.image"/>
+    <ion-card-content>
+      <ion-card-title>{{ rockband.name }}</ion-card-title>
+      <p>
+        {{ rockband.text }}
+      </p>
+      <p>
+        <strong>{{ rockband.year  }}, {{ rockband.voice }}</strong>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
