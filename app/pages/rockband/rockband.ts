@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { TasksPage } from '../tasks/tasks';
 
 /*
   Generated class for the RockbandPage page.
@@ -19,6 +20,10 @@ export class RockbandPage {
     private params: NavParams
   ) {
     this.rockband = this.params.get('rockband');
+  }
+
+  goToTasksPage(){
+    this.navCtrl.push( TasksPage );
   }
 
 }

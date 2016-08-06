@@ -17,9 +17,9 @@
   <ion-list>
     <ion-item *ngFor="let rockband of rockbands" (click)="goToRockbandPage( rockband  )">
       <ion-thumbnail item-left>
-        <img [src]="rockband.image">
+        <img [src]="rockband.picture.medium">
       </ion-thumbnail>
-      <h2>{{ rockband.name }}</h2>
+      <h2>{{ rockband.name.first }}</h2>
     </ion-item>
   </ion-list>
 </ion-content>

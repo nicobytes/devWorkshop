@@ -13,16 +13,11 @@
 </ion-header>
 
 <ion-content>
+  <button (click)="goToTasksPage()">Ir a tareas</button>
   <ion-card>
-    <img [src]="rockband.image"/>
+    <img [src]="rockband.picture.large"/>
     <ion-card-content>
-      <ion-card-title>{{ rockband.name }}</ion-card-title>
-      <p>
-        {{ rockband.text }}
-      </p>
-      <p>
-        <strong>{{ rockband.year  }}, {{ rockband.voice }}</strong>
-      </p>
+      <ion-card-title>{{ rockband.email }}</ion-card-title>
     </ion-card-content>
   </ion-card>
 </ion-content>

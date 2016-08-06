@@ -1,17 +1,37 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { RockbandPage } from '../rockband/rockband';
+import { UsersService } from '../../providers/users/users';
 
 @Component({
   templateUrl: 'build/pages/rockbands/rockbands.html',
+  providers: [ UsersService ]
 })
 export class RockbandsPage {
 
   rockbands: any[];
 
   constructor(
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    private usersServive: UsersService
   ) {
+    this.loadDataRest();
+  }
+
+  goToRockbandPage( rockband ){
+    this.navCtrl.push( RockbandPage, {
+      rockband: rockband
+    });
+  }
+
+  loadDataRest(){
+    this.usersServive.getUsers()
+    .then(data => {
+      this.rockbands = data.results;
+    })
+  }
+
+  loadDataSeed(){
     this.rockbands = [
       {
         name: 'Nirvana',
@@ -42,12 +62,6 @@ export class RockbandsPage {
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
       }
     ];
-  }
-
-  goToRockbandPage( rockband ){
-    this.navCtrl.push( RockbandPage, {
-      rockband: rockband
-    });
   }
 
 }
